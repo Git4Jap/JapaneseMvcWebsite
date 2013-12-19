@@ -1,0 +1,47 @@
+﻿@model JapaneseMvcWebsite.JapaneseService.Kanji
+
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add a new Kanji!</title>
+</head>
+<body>
+    <div>
+        <h2>Add new Kanji</h2>
+        <br />
+        <form id="frmAddKanji" method="post" action="AddKanji">
+            <fieldset>
+                @Html.LabelFor(m => m.Id)
+                @Html.TextBoxFor(m => m.Id, new { required = "required" })
+                @Html.ValidationMessageFor(m => m.Id)
+                <br />
+                @Html.LabelFor(m => m.Character)
+                @Html.TextBoxFor(m => m.Character, new { required = "required" })
+                @Html.ValidationMessageFor(m => m.Character)
+                <br />
+                @Html.LabelFor(m => m.OnSound, "On Sound")
+                @Html.TextBoxFor(m => m.OnSound, new { maxLength = 50 })
+                <br />
+                @Html.LabelFor(m => m.KunSound, "Kun Sound")
+                @Html.TextBoxFor(m => m.KunSound, new { maxLength = 50 })
+                <br />
+                @Html.LabelFor(m => m.Meaning)
+                @Html.TextBoxFor(m => m.Meaning, new { maxLength = 150 })
+                <br />
+                @Html.LabelFor(m => m.Tags)
+                @Html.TextBoxFor(m => m.Tags, new { maxLength = 150 })
+                <br />
+                @Html.LabelFor(m => m.Parts)
+                @Html.TextBoxFor(m => m.Parts, new { maxLength = 150 })
+                <br />
+                <input type="submit" value="Add" />
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
